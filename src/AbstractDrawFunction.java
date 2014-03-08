@@ -13,9 +13,13 @@ public abstract class AbstractDrawFunction {
 	System.out.println("f(x) = sin(x) = \n" + );
 	cos_x x3 = new cos_x();
 	System.out.println("f(x) = cos(x) = \n" + );
+	tan_x x4 = new tan_x();
 	System.out.println("f(x) = tan(x) = \n" + );
+	cos_5sin_x x5 = new cos_5sin_x();
 	System.out.println("f(x) = cos(x) + 5sin(x) = \n" + );
+	cos_sin_x x6 = new cos_sin_x();
 	System.out.println("f(x) = 5cos(x) + sin(x) = \n" + );
+	log_x x7 = new log_x();
 	System.out.println("f(x) = log(x) + x^2 = \n" + );
 	
 	}
