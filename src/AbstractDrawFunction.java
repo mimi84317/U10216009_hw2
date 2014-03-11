@@ -1,5 +1,6 @@
 
 import java.util.Scanner; 
+import java.lang.Math;
 public abstract class AbstractDrawFunction {
 	public static void main(String[] args){
 	
@@ -30,56 +31,56 @@ class x_2 extends AbstractDrawFunction{
 	
 	
 	public x_2(){
-	}
-	double end_x = Math.pow( x , 2 );
+	}	
 	public String toString(){
-	return "f(x) = x^2 = " + end_x;
+		double end_x = Math.pow( x , 2 );
+		return "f(x) = x^2 = " + end_x;
 	}
 	
 }
 class sin_x extends AbstractDrawFunction{
 	
 	public sin_x(){
-	}
-	double end_sin = Math.sin(x);
+	}	
 	public String toString(){
-	return "f(x) = sin(x) =" + end_sin;
+		double end_sin = Math.sin(x);
+		return "f(x) = sin(x) =" + end_sin;
 	}
 }
 
 class cos_x extends AbstractDrawFunction{
 	
 	public cos_x(){
-	}
-	double end_cos = Math.cos(x);
+	}	
 	public String toString(){
+		double end_cos = Math.cos(x);
 		return "f(x) = cos(x) = " + end_cos;
 		}
 }
 class tan_x extends AbstractDrawFunction{
 	
 	public tan_x(){
-	}
-	double end_tan = Math.tan(x);
+	}	
 	public String toString(){
+		double end_tan = Math.tan(x);
 		return "f(x) = tan(x) = " + end_tan;
 		}
 }
 class cos_5sin_x extends AbstractDrawFunction{
 	
 	public cos_5sin_x(){
-	}
-	double end_cos_5sin = Math.cos(x) + 5 * Math.sin(x);
+	}	
 	public String toString(){
+		double end_cos_5sin = Math.cos(x) + 5 * Math.sin(x);
 		return "f(x) = cos(x) + 5sin(x) = " +end_cos_5sin;
 		}
 }
 class cos_sin_x extends AbstractDrawFunction{
 	
 	public cos_sin_x(){
-	}
-	double end_cos_sin = 5 * Math.cos(x) + Math.sin(x);
+	}	
 	public String toString(){
+		double end_cos_sin = 5 * Math.cos(x) + Math.sin(x);
 		return "f(x) = 5cos(x) + sin(x) = " + end_cos_sin;
 		}
 }
@@ -87,8 +88,8 @@ class log_x extends AbstractDrawFunction{
 	
 	public log_x(){
 	}
-	double end_log = Math.log(x);
 	public String toString(){
+		double end_log = Math.log(x);
 		return "f(x) = log(x) + x^2 = " + end_log;
 		}
 }
