@@ -1,95 +1,48 @@
-
 import java.util.Scanner; 
 import java.lang.Math;
-public abstract class AbstractDrawFunction {
+import java.awt.Graphics;
+import java.awt.Polygon;
+import javax.swing.JPanel;
+
+
+public abstract class AbstractDrawFunction extends JPanel {
+	//create the main class
+	
+
 	public static void main(String[] args){
-	
-	Scanner input = new Scanner(System.in);
-	double x = input.nextDouble();
-	
-	
-	System.out.println("Please enter the value of x : \n" + x);
-	x_2 x1 = new x_2();
-	System.out.println(x1.toString() + "\n");
-	sin_x x2 = new sin_x();
-	System.out.println(x2.toString() + "\n");
-	cos_x x3 = new cos_x();
-	System.out.println(x3.toString() + "\n");
-	tan_x x4 = new tan_x();
-	System.out.println(x4.toString() + "\n");
-	cos_5sin_x x5 = new cos_5sin_x();
-	System.out.println(x5.toString() + "\n");
-	cos_sin_x x6 = new cos_sin_x();
-	System.out.println(x6.toString() + "\n" );
-	log_x x7 = new log_x();
-	System.out.println(x7.toString() + "\n");
-	
-	}
-
-}
-class x_2 extends AbstractDrawFunction{
+		
+		System.out.println("Please enter the x");
+		@SuppressWarnings("resource")
+		Scanner input = new Scanner(System.in); 
+		double x = input.nextDouble();
+		
+		System.out.println("The answer of f(x) = Math.pow(x, 2) is " + new x_2().f(x) );
+		System.out.println("The answer of f(x) = sin(x) is " + new sin_x().f(x));	
+		System.out.println("The answer of f(x) = cos(x) is " + new cos_x().f(x));	
+		System.out.println("The answer of f(x) = 5sin(x) + cos(x) is " + new tan_x().f(x));
+		System.out.println("The answer of f(x) = sin(x) + 5cos(x) is " + new cos_sin5_x().f(x));
+		System.out.println("The answer of f(x) = 5sin(x) + cos(x) is " + new cos5_sin_x().f(x));
+		System.out.println("The answer of f(x) = logx + Math.pow(x, 2) is" + new log_x().f(x));
+		
+		//invoke the result
+		}
 	
 	
-	public x_2(){
-	}	
-	public String toString(){
-		double end_x = Math.pow( x , 2 );
-		return "f(x) = x^2 = " + end_x;
+	private Polygon p = new Polygon();
+	protected AbstractDrawFunction() {
+		drawFunction();
 	}
 	
-}
-class sin_x extends AbstractDrawFunction{
+	abstract double f(double x);
 	
-	public sin_x(){
-	}	
-	public String toString(){
-		double end_sin = Math.sin(x);
-		return "f(x) = sin(x) =" + end_sin;
+	public void drawFunction() {
+		//create the function
+		for (int x = -100; x <= 100; x++) {
+			p.addPoint(x + 200, 200 - (int) f(x));
+		}
 	}
-}
-
-class cos_x extends AbstractDrawFunction{
 	
-	public cos_x(){
-	}	
-	public String toString(){
-		double end_cos = Math.cos(x);
-		return "f(x) = cos(x) = " + end_cos;
-		}
-}
-class tan_x extends AbstractDrawFunction{
-	
-	public tan_x(){
-	}	
-	public String toString(){
-		double end_tan = Math.tan(x);
-		return "f(x) = tan(x) = " + end_tan;
-		}
-}
-class cos_5sin_x extends AbstractDrawFunction{
-	
-	public cos_5sin_x(){
-	}	
-	public String toString(){
-		double end_cos_5sin = Math.cos(x) + 5 * Math.sin(x);
-		return "f(x) = cos(x) + 5sin(x) = " +end_cos_5sin;
-		}
-}
-class cos_sin_x extends AbstractDrawFunction{
-	
-	public cos_sin_x(){
-	}	
-	public String toString(){
-		double end_cos_sin = 5 * Math.cos(x) + Math.sin(x);
-		return "f(x) = 5cos(x) + sin(x) = " + end_cos_sin;
-		}
-}
-class log_x extends AbstractDrawFunction{
-	
-	public log_x(){
+	@Override
+	protected void paintComponent(Graphics g) {
 	}
-	public String toString(){
-		double end_log = Math.log(x);
-		return "f(x) = log(x) + x^2 = " + end_log;
-		}
 }
